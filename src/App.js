@@ -8,10 +8,10 @@ import './App.css';
 // }
 // console.log(plusOperator())
 
-const plusOperator = (props) => {
-  return 5 + 2 //later props.digit = input(called props)
-}
-console.log(plusOperator())
+// const plusOperator = (props) => {
+//   return 5 + 2 //later props.digit = input(called props)
+// }
+// console.log(plusOperator())
 
 function Digit(props){
   return(
@@ -26,9 +26,9 @@ function Digit(props){
 function Operators(props){
   return(
     <div className="Operator">
-      <button>+{props.plus}</button>
-      <button>-{props.min}</button>
-      <button>*{props.mult}</button>
+      <button>+{props.returnPlus}</button>
+      <button>-{props.returnMin}</button>
+      <button>*{props.returnMult}</button>
   </div>
   )
 }
@@ -36,7 +36,7 @@ function Operators(props){
 function Equal(props){
   return(
     <div>
-      <button style={{fontSize: 18}}>={props.result}</button>
+      <button style={{fontSize: 18}}>={props.returnResult}</button>
   </div>
   )
 }
@@ -45,8 +45,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      result: 0
+      Returnresult: 0
     };
+    //console.log(this.state)
   }
 
   render() {
@@ -56,15 +57,15 @@ class App extends Component {
         <Digit onClick ={this.props}></Digit>
         <Operators onClick ={this.props}></Operators>
         <Equal 
-        onClick={this.result}>
+        onClick={this.props}>
         </Equal>
       </div>
     );
   }
   //method
   calculResult() {
-    const {result} = this.state;//object destructuring ipv this.state
-    return result//hier eventueel foutmelding: this.state.count === "string" ? <p>input error</p> : this.state.count;
+    //const {result} = this.state;//object destructuring ipv this.state
+    return 5 + 2 //result//hier eventueel foutmelding: this.state.count === "string" ? <p>input error</p> : this.state.count;
     }
 }
 
