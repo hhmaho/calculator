@@ -50,12 +50,11 @@ class App extends Component {
     super(props);
     this.state = {
       input: "1 + 1",
+      output: "test",
       // listDigits,
       // Returnresult: 0
     };
-    //console.log(this.state)
-    console.log(this.state.input)
-
+    console.log(this.state)
   }
 
   render() {
@@ -69,6 +68,9 @@ class App extends Component {
         <button onClick={() => this.setState({ input: this.state.input.concat("2") })}>2</button>
         <button onClick={() => this.setState({ input: this.state.input.concat("3") })}>3</button>
         <button onClick={() => this.setState({ input: ("") })}>clear</button>
+        <br />
+        <span>{this.state.output}</span>
+        <button onClick={() => this.setState({ output: this.state.input })}>=</button>
         {/* <button onClick={() => console.log("abc")}>click</button> */}
         {/* <Digit onClick={this.props}></Digit> */}
         <Operators onClick={this.props}></Operators>
@@ -86,8 +88,7 @@ class App extends Component {
   //   return (
   //     "1 + 1"
   //   ) //result//hier eventueel foutmelding: this.state.count === "string" ? <p>input error</p> : this.state.count;
-
-}
+  // }
 }
 
 export default App;
